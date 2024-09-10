@@ -1,0 +1,160 @@
+:root {
+    --color-primario: rgba(34, 212, 253, 1);
+    ;
+    --color-secundario: #f3f3f3;
+    --color-fuentes: black;
+    --fuente: "Montserrat";
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 90%;
+    margin: 0 auto;
+    font-family: var(--fuente);
+    margin: 0 auto;
+    background-color: var(--color-secundario);
+}
+
+header {
+    grid-area: header;
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    padding: .5rem;
+    font-weight: 800;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--fuente);
+}
+
+header h2 {
+    font-size: clamp(1rem, 5vw, 3rem);
+    padding: 1.5rem;
+}
+
+.content {
+    display: grid;
+    gap: 1rem;
+    padding: 5rem;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "header header"
+        "formulario  mensaje"
+        "footer     footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--color-primario);
+    padding: 1.5rem;
+}
+
+.formulario {
+    grid-area: formulario;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+}
+
+.formulario h2 {
+    padding: 0 0 1rem 0;
+}
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.botones {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.entrada {
+    padding: 1rem 2rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: none;
+}
+
+.boton {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--color-primario);
+}
+
+.mensaje {
+    grid-area: mensaje;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mensaje h2 {
+    padding-top: 2rem;
+    margin: 0 auto;
+}textarea{
+    resize: none;
+    max-width: 20rem;
+    border-radius: .5rem;
+}
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: aliceblue;
+    padding: 1rem;
+}footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}footer a{
+    color: white;
+    text-decoration: none;
+}.menu_nav{
+    display: flex;
+    flex-wrap: wrap;
+    
+}i{
+    padding: 0 1rem ;
+}
+
+
+@media screen and (max-width:750px){
+    .content{
+        grid-template-areas: "header header"
+        "formulario  formulario"
+        "mensaje   mensaje"
+        "footer     footer";
+    }
+}
